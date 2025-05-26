@@ -1,0 +1,13 @@
+<h1><%= @breed["name"] %></h1>
+
+<% if @image_url %>
+  <img src="<%= @image_url %>" alt="<%= @breed["name"] %>" width="300">
+<% end %>
+
+<p><strong>Origin:</strong> <%= @breed["origin"] %></p>
+<p><strong>Temperament:</strong> <%= @breed["temperament"] %></p>
+<p><strong>Description:</strong> <%= @breed["description"] %></p>
+<p><strong>Life Span:</strong> <%= @breed["life_span"] %> years</p>
+<p><strong>Wikipedia:</strong> <%= link_to "More Info", @breed["wikipedia_url"], target: "_blank" if @breed["wikipedia_url"] %></p>
+
+<%= link_to "Search Another Breed", root_path %>
