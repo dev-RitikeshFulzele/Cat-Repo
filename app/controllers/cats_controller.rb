@@ -1,4 +1,5 @@
 class CatsController < ApplicationController
+  
   include HTTParty
   base_uri 'https://api.thecatapi.com/v1'
 

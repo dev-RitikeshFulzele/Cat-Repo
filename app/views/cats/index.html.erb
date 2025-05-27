@@ -1,7 +1,19 @@
-<h1>Cat Breed Search</h1>
+<h1 class="text-center" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Cat Breed Search</h1>
 
-<%= form_with url: search_cats_path, method: :post, local: true do |form| %>
-  <%= form.label :breed, "Enter Cat Breed:" %>
-  <%= form.text_field :breed %>
-  <%= form.submit "Search" %>
-<% end %>
+<div class="d-flex justify-content-center mt-4">
+  <div>
+    <%= form_with url: search_cats_path, method: :post, local: true do |form| %>
+      <div class="mb-3 text-center">
+        <p class="fst-italic">
+          <%= form.label :breed, "Enter Cat Breed:" %><br>
+        </p>
+        <%= form.text_field :breed, class: "form-control rounded mx-auto", style: "width: 300px;", id: "breed-input", oninput: "this.value = this.value.replace(/\\s+/g, '')" %>
+      </div>
+
+      <div class="mb-3 text-center">
+        <%= form.submit "Search", class: "btn btn-outline-success" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
